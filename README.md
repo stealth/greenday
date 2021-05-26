@@ -8,7 +8,8 @@ which are necessary to understand DGCs and the crypto behind it.
 If you [wonder about the name](https://www.youtube.com/watch?v=NUTGr5t3MoY) of this repo.
 
 The documents are under the Creative Commons CC 3.0 (WHO) and 4.0 (EU)
-license. There are some EU documents which explicitly have a more strict
+license, as stated within the particular PDF files. None of the documents
+were modified and are just a pure copy in order to have them in a single place. There are some EU documents which explicitly have a more strict
 licensing and are theoretically only distributable by EU or
 their member states. Though, they may be downloaded
 [here (EU DPIA-Draft)](https://ec.europa.eu/health/sites/default/files/ehealth/docs/efgs_dpia_en.pdf) and are therefore not part of this repo.
