@@ -21,6 +21,8 @@ Additional resources:
 
 * [EU DGC github](https://github.com/eu-digital-green-certificates)
 
+* [EU eHN devel coordination](https://github.com/ehn-digital-green-development)
+
 * [EU ehealth docs](https://ec.europa.eu/health/ehealth/key_documents_en)
 
 
