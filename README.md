@@ -149,7 +149,7 @@ quite some standards to fulfil for all EU countries until everything is working.
 In practise, the fake DGC looks like this:
 
 <p align="center">
-![rambo](https://github.com/stealth/greenday/blob/master/rambo.jpg)
+<img src="https://github.com/stealth/greenday/blob/master/rambo.jpg" />
 </p>
 
 
