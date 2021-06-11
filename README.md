@@ -121,15 +121,22 @@ class VaccinationQRCodeExtractor @Inject constructor(
 
 ![rambo](https://github.com/stealth/greenday/blob/master/rambo.jpg)
 
-The CWA is not the *CoviPass* verification app but it was announced to the public
+The CWA is not the *CovPass* verification app but it was announced to the public
 as one of the official verification methods yesterday.
 
 As the crypto part is just missing, you can upload arbitrary JSON data to the CWA,
 given that it satisfies the EU specification of the JSON schemas which are in this repo under *specs*
+and make CWA find the necessary JSON tags.
 
 The JSON I used is:
 
 ```json
 { "ver": "1.2.1", "nam": { "fn": "RAMBO", "gn": "John", "fnt": "RAMBO", "gnt": "John" }, "dob": "1990-11-11", "v":[{"tg": "840539006", "vp": "1119349007", "mp": "EU/1/20/1528", "ma": "ORG-7350", "dn": 2, "sd": 2, "dt" : "2021-04-21", "co": "DE", "is": "c-skills","ci": "urn:uvci:01:NL:PlA8UWS60Z4RZXVALl6GAZ" }]}
 ```
+
+At least its asking for trouble to let users upload unsigned certificates into the official corona app,
+if your threat models are fake vaccination certificates. And that is what the entire vax cert
+topic is about. My assumption is that the cryptographic verification is/was planned to happen, but there was no time setting
+up the backend PKI to distribute the keys in time. If you read the specifications, you will find that theres
+quite some standards to fulfil for all EU countries until everything is working.
 
