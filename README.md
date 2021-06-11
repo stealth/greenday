@@ -36,7 +36,7 @@ verification apps etc, I will add it here.
 After reading the CWA section you will get an idea where the problems about the
 crypto will be originated from in future.
 
-c-skills reviewed the source of the german *Corona Warn App* that may
+*c-skills* reviewed the source of the german *Corona Warn App* that may
 store vaccination certificates (as of released yesterday 10/06/2021)
 and found that the verification part of the COSE cryptographic signatures is just missing.
 Rather, the kotlin code just parses the COSE data as normal CBOR:
@@ -121,5 +121,15 @@ class VaccinationQRCodeExtractor @Inject constructor(
 
 ![rambo](https://github.com/stealth/greenday/blob/master/rambo.jpg)
 
+The CWA is not the *CoviPass* verification app but it was announced to the public
+as one of the official verification methods yesterday.
 
+As the crypto part is just missing, you can upload arbitrary JSON data to the CWA,
+given that it satisfies the EU specification of the JSON schemas which are in this repo under *specs*
+
+The JSON I used is:
+
+```json
+{ "ver": "1.2.1", "nam": { "fn": "RAMBO", "gn": "John", "fnt": "RAMBO", "gnt": "John" }, "dob": "1990-11-11", "v":[{"tg": "840539006", "vp": "1119349007", "mp": "EU/1/20/1528", "ma": "ORG-7350", "dn": 2, "sd": 2, "dt" : "2021-04-21", "co": "DE", "is": "c-skills","ci": "urn:uvci:01:NL:PlA8UWS60Z4RZXVALl6GAZ" }]}
+```
 
