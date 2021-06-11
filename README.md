@@ -140,16 +140,44 @@ The JSON I used is:
 { "ver": "1.2.1", "nam": { "fn": "RAMBO", "gn": "John", "fnt": "RAMBO", "gnt": "John" }, "dob": "1990-11-11", "v":[{"tg": "840539006", "vp": "1119349007", "mp": "EU/1/20/1528", "ma": "ORG-7350", "dn": 2, "sd": 2, "dt" : "2021-04-21", "co": "DE", "is": "c-skills","ci": "urn:uvci:01:NL:PlA8UWS60Z4RZXVALl6GAZ" }]}
 ```
 
-At least its asking for trouble to let users upload unsigned certificates into the official corona app,
-if your threat models are fake vaccination certificates. And that is what the entire DGC topic is about.
+At least its asking for trouble to let users upload unsigned certificates into the official corona app
+and placing a check-mark behind it, if your threat models are fake DGCs. And this threat model is what the
+entire topic is about.
 My assumption is that the cryptographic verification is/was planned to happen, but there was no time setting
-up the backend PKI to distribute the keys in time. If you read the specifications, you will find that theres
-quite some standards to fulfil for all EU countries until everything is working.
+up the backend PKI to distribute the keys before app release. If you read the specifications, you will find that
+there are quite some standards to fulfil for all EU countries until everything is working.
 
 In practise, the fake DGC looks like this:
+
 
 <p align="center">
 <img src="https://github.com/stealth/greenday/blob/master/rambo.jpg" />
 </p>
 
+
+Even if all other DGC verification apps are secure (a theory left to prove),
+you have to consider that someone possibly tampered with the QR code before importing or the signature
+is simply broken when you obtained it from the doctor. In that case you may travel with an invalid
+DGC, putting trust into the blue check-mark and are then stopped at the border in nowhere-land.
+
+German specifics
+----------------
+
+If almost every doctor and med-shop is in possession of creating DGCs for citizens, the day will
+come when private signing keys leak or quite a large batch of DGCs is falsely signed or malware
+is submitting false DGCs for signing to a central authority if a central approach is used.
+If I didn't miss anything (please correct me if I am wrong), the HC1 certificates do not contain a JSON
+tag for the *date of signing* (and possibly location or ID of signing entity). This makes it impossible to revoke
+invalid DGCs without a lot of hazzle and invoking quite a lot valid DGCs along with it (maybe even all
+valid DGCs until the day of revocation). This would make the entire DGC approach useless.
+
+
+Privacy
+-------
+
+The person of which the DGC is checked at shop-entry, bar, club or travel has no way to make sure the
+verifier is not using a patched app to store and possibly sell all information it gets out of the QR code.
+As a bonus, the id-card's name is matched with that data. Just imagine the power of border control capabilities
+in the hand of underpayed security guards at concert halls. Checking passports, id-cards (and now DGCs) is a task
+that should only be executed by gov authorities, in particular if the data is made of bits.
 
