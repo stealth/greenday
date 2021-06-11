@@ -25,6 +25,10 @@ Additional resources:
 
 * [EU ehealth docs](https://ec.europa.eu/health/ehealth/key_documents_en)
 
+* [DGC of the State of Berlin](https://gitlab.com/ponci-berlin)
+
+* [CovPass (DGC Germany)](https://github.com/digitaler-impfnachweis)
+
 
 Security
 --------
@@ -36,8 +40,12 @@ verification apps etc, I will add it here.
 After reading the CWA section you will get an idea where the problems about the
 crypto will be originated from in future.
 
+
+Corona Warn App (CWA)
+---------------------
+
 *c-skills* reviewed the source of the german *Corona Warn App* that may
-store vaccination certificates (as of released yesterday 10/06/2021)
+store vaccination certificates (Version 2.3.2 as released yesterday 10/06/2021)
 and found that the verification part of the COSE cryptographic signatures is just missing.
 Rather, the kotlin code just parses the COSE data as normal CBOR:
 
@@ -119,10 +127,8 @@ class VaccinationQRCodeExtractor @Inject constructor(
 
 ```
 
-![rambo](https://github.com/stealth/greenday/blob/master/rambo.jpg)
-
-The CWA is not the *CovPass* verification app but it was announced to the public
-as one of the official verification methods yesterday.
+The CWA is **not** the *CovPass* verification app but it was announced to the public
+as one of the official verification methods yesterday along with *CovPass*.
 
 As the crypto part is just missing, you can upload arbitrary JSON data to the CWA,
 given that it satisfies the EU specification of the JSON schemas which are in this repo under *specs*
@@ -135,8 +141,15 @@ The JSON I used is:
 ```
 
 At least its asking for trouble to let users upload unsigned certificates into the official corona app,
-if your threat models are fake vaccination certificates. And that is what the entire vax cert
-topic is about. My assumption is that the cryptographic verification is/was planned to happen, but there was no time setting
+if your threat models are fake vaccination certificates. And that is what the entire DGC topic is about.
+My assumption is that the cryptographic verification is/was planned to happen, but there was no time setting
 up the backend PKI to distribute the keys in time. If you read the specifications, you will find that theres
 quite some standards to fulfil for all EU countries until everything is working.
+
+In practise, the fake DGC looks like this:
+
+<p align="center">
+![rambo](https://github.com/stealth/greenday/blob/master/rambo.jpg)
+</p>
+
 
