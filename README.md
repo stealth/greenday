@@ -40,9 +40,9 @@ verification apps etc, I will add it here.
 After reading the CWA section you will get an idea where the problems about the
 crypto will be originated from in future.
 
-**Diclaimer:** *The fake DGCs contain an obvious unreal name and are for research purposes only.
+**Disclaimer:** *The fake DGCs contain an obvious unreal name and are for research purposes only.
 Using fake DGCs to get entry to a location or showing it at the border is most likely illegal.
-Do not do that. You would get into serious trouble.**
+Do not do that. You would get into serious trouble.*
 
 
 Corona Warn App (CWA)
