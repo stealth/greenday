@@ -40,6 +40,10 @@ verification apps etc, I will add it here.
 After reading the CWA section you will get an idea where the problems about the
 crypto will be originated from in future.
 
+**Diclaimer:** *The fake DGCs contain an obvious unreal name and are for research purposes only.
+Using fake DGCs to get entry to a location or showing it at the border is most likely illegal.
+Do not do that. You would get into serious trouble.**
+
 
 Corona Warn App (CWA)
 ---------------------
@@ -170,6 +174,12 @@ If I didn't miss anything (please correct me if I am wrong), the HC1 certificate
 tag for the *date of signing* (and possibly location or ID of signing entity). This makes it impossible to revoke
 invalid DGCs without a lot of hassle and revoking quite a lot valid DGCs along with it (maybe even all
 valid DGCs until the day of revocation). This would make the entire DGC approach useless.
+In order to have practical revokable DGCs, there would need to be a certificate hierarchy where
+a top level CA signs sub-certificates which carry a date of validity (daily at best) and these
+sub-certificates would then be used to sign DGCs that contain the date of signing. In the event
+of leaked sub-certs, these can be revoked and only the DGCs of that day become invalid. The top level
+certificate would never leave a single HSM and the sub-certs could be specific for each med-shop etc.
+and are distributed daily.
 
 
 Privacy
