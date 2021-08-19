@@ -164,6 +164,9 @@ you have to consider that someone possibly tampered with the QR code before impo
 is simply broken when you obtained it from the doctor. In that case you may travel with an invalid
 DGC, putting trust into the blue check-mark, until you are stopped at the border in nowhere-land.
 
+*Update: I was informed that upstream changed the behavior of CWA to also check signatures as
+of version 2.7. (unchecked, I was just asked to communicate this)*.
+
 German specifics
 ----------------
 
